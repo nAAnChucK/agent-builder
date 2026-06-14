@@ -8,7 +8,7 @@ import httpx
 from langchain_core.tools import tool
 
 WORKSPACE = Path(os.getenv("DATA_DIR", Path(__file__).parent.parent)) / "workspace"
-WORKSPACE.mkdir(exist_ok=True)
+WORKSPACE.mkdir(parents=True, exist_ok=True)
 
 
 def _safe_path(relative: str) -> Path:
